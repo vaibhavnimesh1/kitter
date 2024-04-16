@@ -169,7 +169,11 @@ body {
 .has-bg-image {
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: calc(100% - 10px) calc(100% - 10px); /* Adjust the values accordingly */
+  width: 100%;
+  /* background-position: calc(100% - 10px) calc(100% - 10px);  */
+  /* background-size: cover; */
+  background-image: url('https://media.istockphoto.com/id/174839882/photo/paper-concept-dr-doolittle.jpg?b=1&s=612x612&w=0&k=20&c=WKuJ85kajwROk-21AiGA8fYdpOpgPy2mgaZPvcxFf7s=');
+
 }
 
 .h1,
@@ -1109,9 +1113,11 @@ body {
 
 }#home .container{
   float: right;
-  margin-left: 600px;
+  margin-left: -100px;
+  margin-top: -130px;
 }
 .header .container{
 
 
 }
+
