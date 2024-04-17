@@ -10,15 +10,18 @@
   -->
     <title>Hight Quality Pet Food</title>
     <meta name="title" content="Feedzy - Hight Quality Pet Food" />
-    <meta
-      name="description"
-      content="This is an eCommerce html template made by codewithsadee"
-    />
 
     <!-- 
     - favicon
   -->
     <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <!-- 
     - custom css link
@@ -40,6 +43,9 @@
   -->
     <link rel="preload" as="image" href="./assets/images/hero-banner.jpg" />
   </head>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" defer href="script.js" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
 
   <body id="top">
     <!-- 
@@ -149,7 +155,6 @@
                       src="./assets/images/category-1.jpg"
                       width="330"
                       height="300"
-                      loading="lazy"
                       alt="Cat Food"
                       class="img-cover"
                     />
@@ -171,7 +176,6 @@
                       src="./assets/images/category-2.jpg"
                       width="330"
                       height="300"
-                      loading="lazy"
                       alt="Cat Toys"
                       class="img-cover"
                     />
@@ -193,7 +197,6 @@
                       src="./assets/images/category-3.jpg"
                       width="330"
                       height="300"
-                      loading="lazy"
                       alt="Dog Food"
                       class="img-cover"
                     />
@@ -215,7 +218,6 @@
                       src="./assets/images/category-4.jpg"
                       width="330"
                       height="300"
-                      loading="lazy"
                       alt="Dog Toys"
                       class="img-cover"
                     />
@@ -237,7 +239,6 @@
                       src="./assets/images/category-5.jpg"
                       width="330"
                       height="300"
-                      loading="lazy"
                       alt="Dog Sumpplements"
                       class="img-cover"
                     />
@@ -324,37 +325,49 @@
       -->
 
         <section id="carousel">
+          <button onclick="goNext()">
+            <i class="fa-solid fa-angle-left"></i>
+          </button>
           <main>
-            
-              <img class="slide"
-                src="https://images.pexels.com/photos/5110943/pexels-photo-5110943.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt=""
-              />
-              <img class="slide"
-                src="https://images.pexels.com/photos/5110943/pexels-photo-5110943.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt=""
-              />
-              <img class="slide"
-                src="https://images.pexels.com/photos/5110943/pexels-photo-5110943.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt=""
-              />
+            <img
+              class="slide"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR44KHo1wQWZ8ksovrVnipEumopfJZlVHjQ-g&s"
+              alt=""
+            />
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7btk-EOU7kd1IcQsw1Vj33cH3XtU-RtT0tMAsVZQEBg&s" alt="" class="slide">
+            <img
+              class="slide"
+              src="https://cdn.shopify.com/s/files/1/0086/0795/7054/files/bowls_web_6df439f7-d81a-4ffb-aced-43013befd40b.jpg?v=1707383338"
+              alt=""
+            />
 
-            
-              <img class="slide"
-                src="https://images.pexels.com/photos/2389072/pexels-photo-2389072.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt=""
-              />
-
-            
-              <img class="slide"
-                src="https://images.pexels.com/photos/6869543/pexels-photo-6869543.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt=""
-              />
-
+           <img src="https://supertails.com/cdn/shop/files/11_f88313d5-d2ca-41f0-bdf9-b93d07e8e8f0.png?v=1700817694" alt="" class="slide">
+            <img
+              class="slide"
+              src="https://images.pexels.com/photos/6869543/pexels-photo-6869543.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt=""
+            />
+            <img
+              class="slide"
+              src="data:image/jpeg;base64,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"
+              alt=""
+            />
+            <img
+              class="slide"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR44KHo1wQWZ8ksovrVnipEumopfJZlVHjQ-g&s"
+              alt=""
+            />
+            <img
+              class="slide"
+              src="https://5.imimg.com/data5/CR/TV/QJ/ANDROID-86034834/1557207445477-jpg.jpg"
+              alt=""
+            />
           </main>
+
+          <button onclick="goPrev()">
+            <i class="fa-solid fa-angle-right"></i>
+          </button>
         </section>
-        <button onclick="goPrev()">654456</button>
-        <button onclick="goNext()">egs</button>
 
         <!-- 
         - #CAROUSEL
@@ -378,10 +391,9 @@
                     style="--width: 360; --height: 360"
                   >
                     <img
-                      src="./assets/images/product-1.jpg"
+                      src="https://www.all4pets.in/wp-content/uploads/2020/06/Simba-4kg.jpg"
                       width="360"
                       height="360"
-                      loading="lazy"
                       alt="Commodo leo sed porta"
                       class="img-cover default"
                     />
@@ -389,7 +401,6 @@
                       src="./assets/images/product-1_0.jpg"
                       width="360"
                       height="360"
-                      loading="lazy"
                       alt="Commodo leo sed porta"
                       class="img-cover hover"
                     />
@@ -431,10 +442,9 @@
                     style="--width: 360; --height: 360"
                   >
                     <img
-                      src="./assets/images/product-2.jpg"
+                      src="https://img.lazcdn.com/g/p/a567c60d35650312cc4fdf4d9d688258.jpg_720x720q80.jpg"
                       width="360"
                       height="360"
-                      loading="lazy"
                       alt="Purus consequat congue sit"
                       class="img-cover default"
                     />
@@ -442,7 +452,6 @@
                       src="./assets/images/product-2_0.jpg"
                       width="360"
                       height="360"
-                      loading="lazy"
                       alt="Purus consequat congue sit"
                       class="img-cover hover"
                     />
@@ -489,7 +498,6 @@
                       src="./assets/images/product-3.jpg"
                       width="360"
                       height="360"
-                      loading="lazy"
                       alt="Morbi vel arcu scelerisque"
                       class="img-cover default"
                     />
@@ -497,7 +505,6 @@
                       src="./assets/images/product-3_0.jpg"
                       width="360"
                       height="360"
-                      loading="lazy"
                       alt="Morbi vel arcu scelerisque"
                       class="img-cover hover"
                     />
@@ -541,10 +548,9 @@
                     style="--width: 360; --height: 360"
                   >
                     <img
-                      src="./assets/images/product-4.jpg"
+                      src="https://rukminim2.flixcart.com/image/450/400/xif0q/pet-food/h/c/2/-original-imagxycymtgru2qf.jpeg?q=90&crop=false"
                       width="360"
                       height="360"
-                      loading="lazy"
                       alt="Morbi vel arcu scelerisque"
                       class="img-cover default"
                     />
@@ -552,7 +558,6 @@
                       src="./assets/images/product-4_0.jpg"
                       width="360"
                       height="360"
-                      loading="lazy"
                       alt="Morbi vel arcu scelerisque"
                       class="img-cover hover"
                     />
@@ -599,7 +604,6 @@
                       src="./assets/images/product-5.jpg"
                       width="360"
                       height="360"
-                      loading="lazy"
                       alt="Morbi vel arcu scelerisque"
                       class="img-cover default"
                     />
@@ -607,7 +611,6 @@
                       src="./assets/images/product-5_0.jpg"
                       width="360"
                       height="360"
-                      loading="lazy"
                       alt="Morbi vel arcu scelerisque"
                       class="img-cover hover"
                     />
@@ -654,7 +657,6 @@
                       src="./assets/images/product-6.jpg"
                       width="360"
                       height="360"
-                      loading="lazy"
                       alt="Nam justo libero porta ege"
                       class="img-cover default"
                     />
@@ -662,7 +664,6 @@
                       src="./assets/images/product-6_0.jpg"
                       width="360"
                       height="360"
-                      loading="lazy"
                       alt="Nam justo libero porta ege"
                       class="img-cover hover"
                     />
@@ -709,7 +710,6 @@
                       src="./assets/images/product-7.jpg"
                       width="360"
                       height="360"
-                      loading="lazy"
                       alt="Nam justo libero porta ege"
                       class="img-cover default"
                     />
@@ -717,7 +717,6 @@
                       src="./assets/images/product-7_0.jpg"
                       width="360"
                       height="360"
-                      loading="lazy"
                       alt="Nam justo libero porta ege"
                       class="img-cover hover"
                     />
@@ -764,7 +763,6 @@
                       src="./assets/images/product-8.jpg"
                       width="360"
                       height="360"
-                      loading="lazy"
                       alt="Etiam commodo leo sed"
                       class="img-cover default"
                     />
@@ -772,7 +770,6 @@
                       src="./assets/images/product-8_0.jpg"
                       width="360"
                       height="360"
-                      loading="lazy"
                       alt="Etiam commodo leo sed"
                       class="img-cover hover"
                     />
@@ -817,7 +814,7 @@
         <!-- <section class="section service" aria-label="service">
         <div class="container">
 
-          <img src="./assets/images/service-image.png" width="122" height="136" loading="lazy" alt="" class="img">
+          <img src="./assets/images/service-image.png" width="122" height="136" alt="" class="img">
 
           <h2 class="h2 section-title">
             <span class="span">What your pet needs,</span> when they need it.
@@ -829,7 +826,7 @@
               <div class="service-card">
 
                 <figure class="card-icon">
-                  <img src="./assets/images/service-icon-1.png" width="70" height="70" loading="lazy"
+                  <img src="./assets/images/service-icon-1.png" width="70" height="70"
                     alt="service icon">
                 </figure>
 
@@ -846,7 +843,7 @@
               <div class="service-card">
 
                 <figure class="card-icon">
-                  <img src="./assets/images/service-icon-2.png" width="70" height="70" loading="lazy"
+                  <img src="./assets/images/service-icon-2.png" width="70" height="70"
                     alt="service icon">
                 </figure>
 
@@ -863,7 +860,7 @@
               <div class="service-card">
 
                 <figure class="card-icon">
-                  <img src="./assets/images/service-icon-3.png" width="70" height="70" loading="lazy"
+                  <img src="./assets/images/service-icon-3.png" width="70" height="70"
                     alt="service icon">
                 </figure>
 
@@ -880,7 +877,7 @@
               <div class="service-card">
 
                 <figure class="card-icon">
-                  <img src="./assets/images/service-icon-4.png" width="70" height="70" loading="lazy"
+                  <img src="./assets/images/service-icon-4.png" width="70" height="70"
                     alt="service icon">
                 </figure>
 
@@ -913,7 +910,6 @@
                 src="./assets/images/cta-banner.png"
                 width="900"
                 height="660"
-                loading="lazy"
                 alt="cat"
                 class="w-100"
               />
@@ -924,7 +920,6 @@
                 src="./assets/images/cta-icon.png"
                 width="120"
                 height="35"
-                loading="lazy"
                 alt="taste guarantee"
                 class="img"
               />
@@ -963,7 +958,6 @@
                     src="./assets/images/brand-1.jpg"
                     width="150"
                     height="150"
-                    loading="lazy"
                     alt="brand logo"
                     class="img-cover"
                   />
@@ -979,7 +973,6 @@
                     src="./assets/images/brand-2.jpg"
                     width="150"
                     height="150"
-                    loading="lazy"
                     alt="brand logo"
                     class="img-cover"
                   />
@@ -995,7 +988,6 @@
                     src="./assets/images/brand-3.jpg"
                     width="150"
                     height="150"
-                    loading="lazy"
                     alt="brand logo"
                     class="img-cover"
                   />
@@ -1011,7 +1003,6 @@
                     src="./assets/images/brand-4.jpg"
                     width="150"
                     height="150"
-                    loading="lazy"
                     alt="brand logo"
                     class="img-cover"
                   />
@@ -1027,7 +1018,6 @@
                     src="./assets/images/brand-5.jpg"
                     width="150"
                     height="150"
-                    loading="lazy"
                     alt="brand logo"
                     class="img-cover"
                   />

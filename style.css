@@ -745,49 +745,6 @@ body {
   visibility: visible;
   transform: translateY(-10px);
 }
-#home .container {
-  float: right;
-  margin-left: -100px;
-  margin-top: -130px;
-}
-
-#carousel{
-  display: flex;
-}
-
-
-#carousel main{
-
-  width: 80%;
-  height: 500px;
-  margin: 20px auto;
-  box-shadow: 0 0 3px var(--portland-orange);
-  position: relative;
-  overflow: hidden;
-
-}
-
-.slide {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  transition: var(--transition-2);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-#carousel button{
-   
-    bottom: 0;
-    display: flex;
-    margin: auto;
-    background: var(--portland-orange);
-    font-size: 26px;
-    padding: 6px 12px;
-    border-radius: 50%;
-    color: white;
-    font-weight: 900;
-}
 
 /*-----------------------------------*\
   #MEDIA QUERIES
@@ -996,12 +953,6 @@ body {
     justify-content: space-between;
     align-items: center;
   }
-
-  #home .container {
-    float: right;
-    margin-left: -61px;
-    margin-top: -130px;
-}
 }
 
 /**
@@ -1082,6 +1033,7 @@ body {
     display: flex;
     gap: 10px;
   }
+
 
   .navbar-link {
     color: var(--color);
@@ -1187,31 +1139,49 @@ body {
     padding-block-start: 40px;
   }
 }
-
-@media (max-width:425px) {
-  #home .container {
-    float: right;
-    /* margin-left: 153px; */
-    margin-top: -20px!important;
-    margin-right: 84px;
+#home .container {
+  float: right;
+  margin-left: -100px;
+  margin-top: -130px;
 }
 
+#carousel{
+  display: flex;
+}
+
+
 #carousel main{
-  height: 360px;
-  width: 360px;
-  margin: 0;
+
+  width: 80%;
+  height: 400px;
+  margin: 20px auto;
+  box-shadow: 0 0 3px var(--portland-orange);
+  position: relative;
+  overflow: hidden;
+
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: var(--transition-2);
 }
 
 #carousel button{
-  bottom: 0;
-  display: flex;
-  margin: auto;
+   
+    bottom: 0;
+    display: flex;
+    margin: auto;
+    background: var(--portland-orange);
+    font-size: 26px;
+    padding: 6px 12px;
+    border-radius: 50%;
+    color: white;
+    font-weight: 900;
+}
+.navbar-list li:hover{
   background: var(--portland-orange);
-  font-size: 13px;
-  padding: 7px 9px;
-  /* padding: 5px 12px; */
-  color: white;
-  font-weight: 900;
-}
-  
-}
+  color: white!important;
+  transition: all 0.8s;
+    }

@@ -66,25 +66,23 @@ slides.forEach((slide, i) => {
 const goPrev = () => {
   counter--;
   slideImg();
-
 };
 const goNext = () => {
   counter++;
   slideImg();
-
 };
 
 const slideImg = () => {
   if (slides.length === 0) {
     counter = 0;
-    return; 
+    return;
   }
 
   slides.forEach((slide, i) => {
     if (i === 0) {
       slide.style.transform = `translateX(${counter * 100}%)`;
     } else {
-      slide.style.transform = `translateX(${i * 100 + counter * 100}%)`; 
+      slide.style.transform = `translateX(${i * 100 + counter * 100}%)`;
     }
   });
 };
