@@ -1,6 +1,4 @@
-'use strict';
-
-
+"use strict";
 
 /**
  * add event on element
@@ -14,9 +12,7 @@ const addEventOnElem = function (elem, type, callback) {
   } else {
     elem.addEventListener(type, callback);
   }
-}
-
-
+};
 
 /**
  * navbar toggle
@@ -29,19 +25,16 @@ const navbarLinks = document.querySelectorAll("[data-nav-link]");
 const toggleNavbar = function () {
   navbar.classList.toggle("active");
   navToggler.classList.toggle("active");
-}
+};
 
 addEventOnElem(navToggler, "click", toggleNavbar);
-
 
 const closeNavbar = function () {
   navbar.classList.remove("active");
   navToggler.classList.remove("active");
-}
+};
 
 addEventOnElem(navbarLinks, "click", closeNavbar);
-
-
 
 /**
  * active header when window scroll down to 100px
@@ -58,6 +51,41 @@ const activeElemOnScroll = function () {
     header.classList.remove("active");
     backTopBtn.classList.remove("active");
   }
-}
+};
 
 addEventOnElem(window, "scroll", activeElemOnScroll);
+
+const slides = document.querySelectorAll(".slide");
+console.log(slides);
+// const slide = document.querySelectorAll(".scrollbar-item")
+let counter = 0;
+
+slides.forEach((slide, i) => {
+  slide.style.left = `${i * counter}%`;
+});
+
+const goPrev = () => {
+  counter--;
+  slideImg();
+
+};
+const goNext = () => {
+  counter++;
+  slideImg();
+
+};
+
+const slideImg = () => {
+  if (slides.length === 0) {
+    counter = 0;
+    return; 
+  }
+
+  slides.forEach((slide, i) => {
+    if (i === 0) {
+      slide.style.transform = `translateX(${counter * 100}%)`;
+    } else {
+      slide.style.transform = `translateX(${i * 100 + counter * 100}%)`; 
+    }
+  });
+};
